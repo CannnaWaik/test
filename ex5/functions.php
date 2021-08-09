@@ -12,12 +12,17 @@ function randFill($size)
 
 function sum($array)
 {
-    $sum = 0;
-    for ($i = 0; $i < count($array); $i++)
+    for ($i=0; $i < count($array); $i++)
     {
-        $sum += $array[$i];
+        $newArray[$i] = $array[$i][2];
     }
-    return $sum = $sum/(count($array));
+
+    $sum = 0;
+    for ($i = 0; $i < count($newArray); $i++)
+    {
+        $sum += $newArray[$i];
+    }
+    return round($sum/(count($newArray)), 2);
 }
 
 function intoDB($array, $database, $name)
@@ -36,7 +41,9 @@ function fromDB($database, $name)
         $out = mysqli_query($database, "SELECT * FROM temperature WHERE pole_name = $name");
     }
     return $out;*/
-    return mysqli_query($database, "SELECT * FROM temperature WHERE pole_name = $name");
+    return mysqli_query($database, "SELECT * FROM temperature WHERE pole_name = '$name'");
 }
+
+
 
 ?>
