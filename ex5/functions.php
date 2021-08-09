@@ -28,14 +28,15 @@ function intoDB($array, $database, $name)
     }
 }
 
-function fromDB($array, $database, $name)
-{/*
+function fromDB($database, $name)
+{
+    /*
     for ($i = 0; $i < count($array); $i++)
     {
         $out = mysqli_query($database, "SELECT * FROM temperature WHERE pole_name = $name");
     }
     return $out;*/
-    echo mysqli_query($database, "SELECT * FROM temperature WHERE pole_name = $name");
+    return mysqli_query($database, "SELECT * FROM temperature WHERE pole_name = $name");
 }
 
 ?>

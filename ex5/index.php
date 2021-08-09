@@ -22,5 +22,5 @@ intoDB($northData, $db, 'north');
 
 //mysqli_query($db, "INSERT INTO temperature (id, pole_name, pole_data) values (NULL, 'name', 20)");
 
-
+fromDB($db, 'south');
 ?>
